@@ -6,21 +6,25 @@
   box-sizing: border-box;
 }
 
-/* אזור פתיחה */
+/*Opening area*/
 .openDiv {
   background-image: url(images/backgroundPink.jpg);
   text-align: center;
   height: 200px;
-  margin-top: 70px;
-}
-.openDiv h1 {
-  line-height: 3;
+  color: #545151;
+  padding: 20px;
 }
 
-/* אזור אודות */
+.openDiv h1 {
+  line-height: 3;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* about me*/
 .AboutMe {
   text-align: center;
-  direction: rtl;
+  direction: ltr;
   width: 100vw;
   background-color: rgba(211, 211, 211, 0.2);
   padding: 15px;
@@ -55,7 +59,7 @@ div .me1 {
   border-radius: 10px;
 }
 
-/* אזור גלריה */
+/* Landing pages*/
 .gallery {
   padding: 20px;
 }
@@ -86,127 +90,144 @@ div .me1 {
   object-fit: cover;
 }
 
-/* אזור צור קשר */
+/* contact area */
 .contact section {
-  background-color: #3a3a3a;
+  background-color: #333333db;
   direction: rtl;
   font-family: "Heebo", sans-serif;
   color: #fff;
   display: grid;
-  grid-template-columns: repeat(2, 500px);
-  gap: 500px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  padding: 40px;
+  margin-top: 20px;
 }
+
 .contact section div {
-  margin-right: 15rem;
+  margin-right: 2rem;
   padding: 15px;
 }
+
 .contact h1 {
   font-size: 3rem;
   font-weight: 900;
+  margin-bottom: 20px;
 }
+
 .contact p {
   font-size: 1.3rem;
   line-height: 1.5;
-  width: 400px;
-  margin-bottom: 15px;
+  width: 100%;
+  margin-bottom: 20px;
 }
+
 .contact label {
   font-size: 1.2rem;
   font-weight: 700;
 }
+
 .contact input {
   background-color: #fff;
   border: none;
-  border-bottom: 4px solid #1ae0ec;
-  width: 400px;
-  height: 30px;
-  margin-bottom: 15px;
+  border-bottom: 4px solid#ffcccb;
+  width: 80%;
+  height: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
+
 .contact button {
-  background-color: #1ae0ec;
+  background-color: #b97877;
   font-family: "Heebo", sans-serif;
-  color: #000;
-  width: 160px;
+  color: #fff;
+  width: 80%;
   border: none;
-  border-radius: 22px;
-  margin-top: 10px;
+  height: 40px;
+  border-radius: 5px;
+  margin-top: 20px;
   font-size: 1.5rem;
   font-weight: bold;
 }
+
 .contact .envelope {
-  width: 550px;
-  height: 500px;
+  width: 100%;
+  height: auto;
 }
 
-/* אזור תחתון- רשתות */
+/* Lower area - nets */
 .contact .downArea {
-  background-color: #1ae0ec;
-  width: 100vw;
-  height: 15vh;
+  background-color: #ffcccb;
+  width: 100%;
+  padding: 20px 0;
 }
+
 .contact .downArea ul {
   list-style-type: none;
   display: flex;
   justify-content: space-around;
   color: #000;
 }
+
 .contact .downArea ul li {
-  font: size 1rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  margin-top: 20px;
+  margin-top: 10px;
 }
+
 .contact img {
   width: 35px;
   height: 35px;
 }
-/* זכויות יוצרים */
+
+/* Copyright */
 .contact .copy {
-  background-color: #000;
-  bottom: 0;
-  width: 100vw;
-  height: 20px;
+  background-color: #333;
+  width: 100%;
+  padding: 10px 0;
   color: #fff;
   direction: rtl;
-}
-.contact .copy p {
-  font-size: 15px;
+  text-align: center;
+  border-radius: 0 0 10px 10px;
 }
 
-/* מובייל */
+.contact .copy p {
+  font-size: 1rem;
+}
+
+/* mobile */
 @media (max-width: 550px) {
-  /* אזור גלריה */
+  /* Landing pages*/
   .card-img-top {
     width: 100%;
     height: 30vw;
     object-fit: cover;
   }
 
-  /* אזור צור קשר*/
+  /* contact area*/
   .contact section {
     display: grid;
-    grid-template-columns: repeat(1);
+    grid-template-columns: repeat(1, 1fr);
   }
   .contact section div {
-    margin-right: 2rem;
-    padding: 15px;
+    margin-right: 0;
   }
   .contact p,
   .contact h1,
   .contact input {
-    width: 300px;
+    width: 100%;
   }
 
-  /* אזור תחתון- רשתות */
+  /* Lower area - nets*/
   .contact img {
     width: 20px;
     height: 20px;
   }
   .contact .downArea ul li {
-    font-size: 9px;
+    font-size: 0.5rem;
   }
 
-  /* זכויות יוצרים */
+  /* Copyright */
   .contact .copy p {
-    font-size: 10px;
+    font-size: 0.6rem;
   }
 }

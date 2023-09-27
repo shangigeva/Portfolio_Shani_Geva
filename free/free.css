@@ -47,11 +47,7 @@
 }
 
 /* דף הנחיתה */
-/* .mainDiv {
-  display: grid;
-  grid-template-columns: repeat(2, 50vw);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-} */
+
 .sec1 {
   direction: rtl;
   width: 500px;
@@ -114,4 +110,18 @@
   .sec1 input {
     width: 80vw;
   }
+}
+.projDiv {
+  background-color: #dfdada2f;
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.projDiv img {
+  max-width: 100%;
+  max-height: 100%;
+  padding: 30px;
 }

@@ -22,28 +22,15 @@ const enableCellClick = () => {
 
 let popup = document.querySelector("#popup");
 
+// Function to check if the game has ended
 const ifEndGame = () => {
-  /*
-    1) check vertical
-    2) check horizontal
-    3) check diagonal
-    4) if one of them if true
-    4.1) someone won the game
-    5) else if the board is full
-    5.1) then tekko
-  */
   let whoWonTheGame;
-  /*
-  if x won the game whoWonTheGame = x
-  if o won the game whoWonTheGame = o
-  else no one won the game whoWonTheGame = Even
- */
+
   let cells = document.querySelectorAll("#gamerDiv > div"); // get all cells
   if (!cells || cells.length !== 9) {
     return;
   }
-  //*check vertical
-  // console.log(cells);
+  //check vertical win
   for (let i = 0; i <= 2; i++) {
     if (
       cells[i].innerHTML == cells[i + 3].innerHTML &&
@@ -54,7 +41,7 @@ const ifEndGame = () => {
       whoWonTheGame = cells[i].innerHTML;
     }
   }
-  //*check horizontal
+  // Check for horizontal wins
   for (let i = 0; i < 9; i += 3) {
     // i += 3 => i = i + 3
     if (
@@ -66,15 +53,13 @@ const ifEndGame = () => {
       whoWonTheGame = cells[i].innerHTML;
     }
   }
-  //*check diagonal
-  // \
+  // Check for diagonal wins
   let i = 0;
   if (
     cells[i].innerHTML == cells[i + 4].innerHTML &&
     cells[i + 4].innerHTML == cells[i + 8].innerHTML &&
     cells[i].innerHTML
   ) {
-    //the first column is equal
     whoWonTheGame = cells[i].innerHTML;
   }
   i = 2;
@@ -86,7 +71,7 @@ const ifEndGame = () => {
     //the first column is equal
     whoWonTheGame = cells[i].innerHTML;
   }
-  //*check if game end and someone won or tekko
+  // Check if the game has ended and someone won or it's a tie
 
   if (whoWonTheGame) {
     popup.style.display = "block";
@@ -107,38 +92,29 @@ const ifEndGame = () => {
     popup.innerHTML = "no one won the game";
   }
 };
+// Function to handle cell clicks
 
 const handleClickXO = (myE) => {
-  /*
-    1) check if empty
-    2) set innerHTML
-    3) next turn
-    4) end game
-  */
   if (myE.target.innerHTML != "") {
-    //the div has x or o
-    return; // stop here
+    return;
   }
   //the div is empty and I can put in this div x or o
   myE.target.innerHTML = whoPlayNow;
   whoPlayNow == "x" ? (whoPlayNow = "o") : (whoPlayNow = "x");
   turnDisplay.textContent = ` ${whoPlayNow.toUpperCase()} is playing`;
 
-  // if (whoPlayNow == "x") {
-  //   whoPlayNow = "o";
-  // } else {
-  //   whoPlayNow = "x";
-  // }
   ifEndGame();
 };
+// Function to initialize the page on load
 
 const initPageLoad = () => {
-  //set click on every cell
+  // Set click event listeners on every cell
   let cells = document.querySelectorAll("#gamerDiv > div"); // get all cells
   for (let myDiv of cells) {
     myDiv.addEventListener("click", handleClickXO);
   }
 };
+// Function to start a new game
 
 const newGame = () => {
   whoPlayNow = "x"; // x start first
@@ -151,6 +127,7 @@ const newGame = () => {
   enableCellClick();
   turnDisplay.textContent = ` ${whoPlayNow.toUpperCase()} is playing`;
 };
+// Initialize the game on page load
 
 window.addEventListener("load", () => {
   initPageLoad();
@@ -159,9 +136,3 @@ window.addEventListener("load", () => {
     newGame();
   });
 });
-
-/*
-
-    4) check if end game and who won or even
-    5) play again
-*/

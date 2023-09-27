@@ -59,5 +59,20 @@ const shuffle = () => {
   });
 };
 shuffle();
-
+const resetButton = document.querySelector(".resetBtn");
 cards.forEach((card) => card.addEventListener("click", flipCard));
+
+resetButton.addEventListener("click", () => {
+  resetGame();
+});
+
+const resetGame = () => {
+  // Unflip all cards
+  cards.forEach((card) => {
+    card.classList.remove("flip");
+    card.addEventListener("click", flipCard);
+  });
+  shuffle();
+  [flippedCard, lockBoard] = [false, false];
+  [firstCard, secondCard] = [null, null];
+};
