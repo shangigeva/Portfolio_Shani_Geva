@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+body {
+  height: 100vh;
+  background-color: #3498db;
+  display: flex;
+}
+/* h2 {
+  color: #fff;
+} */
+img {
+  width: 160px;
+  height: 213px;
+}
+.boardGame {
+  display: flex;
+  width: 640px;
+  height: 640px;
+  flex-wrap: wrap;
+  margin: auto;
+  perspective: 1000px;
+}
+.memoryCard {
+  width: calc(25% - 20px);
+  height: 200px;
+  position: relative;
+  transform: scale(1);
+  margin: 10px;
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  transition: transform.5s;
+}
+.memoryCard:active {
+  transform: scale(0.97);
+  transition: 0.2s;
+}
+.memoryCard.flip {
+  transform: rotateY(180deg);
+}
+
+.back,
+.front {
+  position: absolute;
+  width: 140px;
+  height: 200px;
+  border-radius: 10px;
+  backface-visibility: hidden;
+}
+.front {
+  transform: rotateY(180deg);
+}
+
+/* Primary Color (Background):
+
+Light Blue: #3498db
+Card Colors (Pairs):
+
+Lighter Blue: #5da5db
+Medium Blue: #3498db (Same as background)
+Darker Blue: #2574a9
+Darkest Blue: #1e5a8a
+Text and UI Elements:
+
+White: #ffffff
+Dark Gray: #333333
+Accent Color (Buttons, Highlights):
+
+Light Blue (Same as background): #3498db} */

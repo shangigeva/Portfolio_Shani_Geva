@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* אזור פתיחה */
+.openDiv {
+  background-image: url(images/backgroundPink.jpg);
+  text-align: center;
+  height: 200px;
+  margin-top: 70px;
+}
+.openDiv h1 {
+  line-height: 3;
+}
+
+/* אזור אודות */
+.AboutMe {
+  text-align: center;
+  direction: rtl;
+  width: 100vw;
+  background-color: rgba(211, 211, 211, 0.2);
+  padding: 15px;
+}
+
+.change {
+  width: 130px;
+  height: 195px;
+  position: relative;
+  display: inline-block;
+}
+.change .img-top {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 1px;
+  z-index: 99;
+}
+.change:hover .img-top {
+  display: inline;
+}
+.img-top {
+  width: 153px;
+  height: 151px;
+}
+div .me1 {
+  text-align: center;
+  background-color: lightpink;
+  border: 1px solid rgb(218, 115, 132);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* אזור גלריה */
+.gallery {
+  padding: 20px;
+}
+.gallery h1 {
+  text-align: center;
+}
+.gallery p {
+  text-align: center;
+  direction: rtl;
+}
+.card .btn {
+  background-color: plum;
+}
+.card {
+  direction: rtl;
+  transition: all 0.3s;
+}
+.card:hover {
+  transform: scale(1.1);
+}
+.card:hover .btn {
+  border: 2px solid plum;
+  background-color: rgba(221, 160, 221, 0.171);
+}
+.card-img-top {
+  width: 100%;
+  height: 8vw;
+  object-fit: cover;
+}
+
+/* אזור צור קשר */
+.contact section {
+  background-color: #3a3a3a;
+  direction: rtl;
+  font-family: "Heebo", sans-serif;
+  color: #fff;
+  display: grid;
+  grid-template-columns: repeat(2, 500px);
+  gap: 500px;
+}
+.contact section div {
+  margin-right: 15rem;
+  padding: 15px;
+}
+.contact h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+.contact p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  width: 400px;
+  margin-bottom: 15px;
+}
+.contact label {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.contact input {
+  background-color: #fff;
+  border: none;
+  border-bottom: 4px solid #1ae0ec;
+  width: 400px;
+  height: 30px;
+  margin-bottom: 15px;
+}
+.contact button {
+  background-color: #1ae0ec;
+  font-family: "Heebo", sans-serif;
+  color: #000;
+  width: 160px;
+  border: none;
+  border-radius: 22px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.contact .envelope {
+  width: 550px;
+  height: 500px;
+}
+
+/* אזור תחתון- רשתות */
+.contact .downArea {
+  background-color: #1ae0ec;
+  width: 100vw;
+  height: 15vh;
+}
+.contact .downArea ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  color: #000;
+}
+.contact .downArea ul li {
+  font: size 1rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+.contact img {
+  width: 35px;
+  height: 35px;
+}
+/* זכויות יוצרים */
+.contact .copy {
+  background-color: #000;
+  bottom: 0;
+  width: 100vw;
+  height: 20px;
+  color: #fff;
+  direction: rtl;
+}
+.contact .copy p {
+  font-size: 15px;
+}
+
+/* מובייל */
+@media (max-width: 550px) {
+  /* אזור גלריה */
+  .card-img-top {
+    width: 100%;
+    height: 30vw;
+    object-fit: cover;
+  }
+
+  /* אזור צור קשר*/
+  .contact section {
+    display: grid;
+    grid-template-columns: repeat(1);
+  }
+  .contact section div {
+    margin-right: 2rem;
+    padding: 15px;
+  }
+  .contact p,
+  .contact h1,
+  .contact input {
+    width: 300px;
+  }
+
+  /* אזור תחתון- רשתות */
+  .contact img {
+    width: 20px;
+    height: 20px;
+  }
+  .contact .downArea ul li {
+    font-size: 9px;
+  }
+
+  /* זכויות יוצרים */
+  .contact .copy p {
+    font-size: 10px;
+  }
+}

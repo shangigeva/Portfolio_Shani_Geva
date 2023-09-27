@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0c2461, #fc5c65);
+  padding: 10px;
+}
+/* styling the main div */
+.cartlist {
+  width: 100px;
+  min-width: 540px;
+  background-color: #fff;
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 20px;
+}
+.cartlist h2 {
+  color: #0c2461;
+  line-height: 2;
+}
+.cartlist p {
+  color: #143589;
+  margin-bottom: 20px;
+}
+/* styling the add area */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+.row input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background: transparent;
+}
+.row button {
+  padding: 16px 50px;
+  outline: none;
+  background-color: #cc5e52;
+  border: none;
+  border-radius: 30px;
+  color: #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+/* styling the list */
+
+ul li {
+  list-style: none;
+  font-size: 1.5rem;
+  padding: 12px 10px 12px 50px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+/* styling the check */
+ul li::before {
+  content: "";
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+  left: 8px;
+}
+ul li.checked {
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before {
+  background-image: url(images/checked.png);
+}
